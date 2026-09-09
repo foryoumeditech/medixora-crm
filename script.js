@@ -101,8 +101,7 @@ function saveAndRefresh() {
  headers: {
  'Content-Type': 'application/json'
  },
- body: JSON.stringify(leads)
- });
+ body: JSON.stringify(leads[leads.length-1]);
  renderLeads();
 }
 
