@@ -94,8 +94,16 @@ leadForm.addEventListener('submit', (e) => {
 
 // Save to LocalStorage and Update UI
 function saveAndRefresh() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
-    renderLeads();
+ localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
+ fetch('https://script.google.com/macros/s/AKfycbys3D4vOZCj25Z6mEvDU51oRrLQ8smSw7jiuh6Ibm0hvupWh3eOTCIxnJhkHguiJNAa/exec', {
+ method: 'POST',
+ mode: 'no-cors',
+ headers: {
+ 'Content-Type': 'application/json'
+ },
+ body: JSON.stringify(leads)
+ });
+ renderLeads();
 }
 
 // Get Badge Class based on Status
