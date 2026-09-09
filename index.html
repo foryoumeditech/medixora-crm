@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medixora Advanced CRM</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Section -->
+        <div id="login-section" class="section">
+            <div class="login-card">
+                <h2>Medixora CRM</h2>
+                <p>Aesthetic Laser Equipment Portal</p>
+                <form id="login-form">
+                    <input type="text" id="username" placeholder="Username (admin)" required>
+                    <input type="password" id="password" placeholder="Password (1234)" required>
+                    <button type="submit" class="btn-primary">Secure Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard Section (Hidden by default) -->
+        <div id="dashboard-section" class="section hidden">
+            <header class="navbar">
+                <div class="brand-title">
+                    <h2>Medixora <span>CRM Dashboard</span></h2>
+                </div>
+                <button id="logout-btn" class="btn-danger">Logout</button>
+            </header>
+
+            <!-- Stats Overview Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h4>Total Leads</h4>
+                    <span id="total-leads">0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Interested</h4>
+                    <span id="interested-leads">0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Demos Done</h4>
+                    <span id="demos-done">0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Closed Deals</h4>
+                    <span id="closed-deals">0</span>
+                </div>
+            </div>
+
+            <!-- Action Controls Toolbar -->
+            <div class="toolbar">
+                <div class="search-filter-group">
+                    <input type="text" id="search-input" placeholder="Search by name or mobile...">
+                    <select id="filter-status">
+                        <option value="">All Statuses</option>
+                        <option value="Demo Planned">Demo Planned</option>
+                        <option value="Demo Done">Demo Done</option>
+                        <option value="Interested">Interested</option>
+                        <option value="Not Interested">Not Interested</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+                </div>
+                <div class="action-buttons">
+                    <button id="add-lead-btn" class="btn-success">+ Add New Lead</button>
+                    <button id="export-excel-btn" class="btn-excel">📥 Export to Excel</button>
+                </div>
+            </div>
+
+            <!-- Leads Table -->
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Mobile Number</th>
+                            <th>Status</th>
+                            <th>Interest Level</th>
+                            <th>Remarks</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lead-table-body">
+                        <!-- Dynamic Leads Go Here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Add/Edit Lead Modal -->
+        <div id="lead-modal" class="modal hidden">
+            <div class="modal-content">
+                <form id="lead-form">
+                    <h3 id="modal-title">Add New Lead</h3>
+                    <input type="hidden" id="lead-id">
+                    
+                    <div class="form-group">
+                        <label>Client / Clinic Name</label>
+                        <input type="text" id="client-name" placeholder="Dr. Sharma / Clinic Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" id="client-mobile" placeholder="9876543210" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Lead Status</label>
+                        <select id="lead-status">
+                            <option value="Demo Planned">Demo Planned</option>
+                            <option value="Demo Done">Demo Done</option>
+                            <option value="Interested">Interested</option>
+                            <option value="Not Interested">Not Interested</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Interest Level (1-5)</label>
+                        <input type="number" id="interest-rating" min="1" max="5" placeholder="e.g. 5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Remarks / Machine Discussion</label>
+                        <textarea id="remarks" placeholder="e.g. Interested in Sonolift Pro 10D HIFU or PicoSpectra..."></textarea>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-primary">Save Lead</button>
+                        <button type="button" id="close-modal-btn" class="btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
