@@ -112,9 +112,7 @@ fetch('https://script.google.com/macros/s/AKfycbwYKVzdEL4mPg3DqKwysZ7aygmqM4B6rD
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
   },
-  body: params
-
-
+  body: params });
  renderLeads();
 }
 
