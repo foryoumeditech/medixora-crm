@@ -95,7 +95,7 @@ leadForm.addEventListener('submit', (e) => {
 // Save to LocalStorage and Update UI
 function saveAndRefresh() {
  localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
- fetch('https://script.google.com/macros/s/AKfycbys3D4vOZCj25Z6mEvDU51oRrLQ8smSw7jiuh6Ibm0hvupWh3eOTCIxnJhkHguiJNAa/exec', {
+ fetch('https://script.google.com/macros/s/AKfycbxfUIQ-DIQZHsPNopX4WPXODlE1Oa9kwE9yhVvBSgGhUcqKPw-aR7ijo5yjbh-55LuW/exec', {
  method: 'POST',
  mode: 'no-cors',
  headers: {
