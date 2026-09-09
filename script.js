@@ -106,7 +106,7 @@ params.append('remarks', lead.remarks);
 params.append('id', lead.id);
 // ... अन्य appends
 
-fetch('https://script.google.com/macros/s/AKfycbwRUk_oWvwMLhU3JY_hOp7PncdXtQ6ERnYlWpuPLNPgQcpHNbLaSo_DC8aKFU5Nu2F1/exec', {
+fetch('https://script.google.com/macros/s/AKfycbwYKVzdEL4mPg3DqKwysZ7aygmqM4B6rDhQd-sMyzyzGYniWmSb9hOwQvuT9JOqBQZ3/exec', {
   method: 'POST',
   mode: 'no-cors',
   headers: {
