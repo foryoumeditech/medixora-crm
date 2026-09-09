@@ -113,7 +113,6 @@ fetch('https://script.google.com/macros/s/AKfycbwYKVzdEL4mPg3DqKwysZ7aygmqM4B6rD
     'Content-Type': 'application/x-www-form-urlencoded'
   },
   body: params
-);
 
 
  renderLeads();
