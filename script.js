@@ -95,13 +95,27 @@ leadForm.addEventListener('submit', (e) => {
 // Save to LocalStorage and Update UI
 function saveAndRefresh() {
  localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
- fetch('https://script.google.com/macros/s/AKfycbwRUk_oWvwMLhU3JY_hOp7PncdXtQ6ERnYlWpuPLNPgQcpHNbLaSo_DC8aKFU5Nu2F1/exec', {
- method: 'POST',
- mode: 'no-cors',
- headers: {
- 'Content-Type': 'application/json'
- },
- body: JSON.stringify(leads[leads.length-1]);
+ const lead = leads[leads.length-1];
+const params = new URLSearchParams();
+params.append('id', lead.id);
+params.append('name', lead.name);
+params.append('mobile', lead.mobile);
+params.append('status', lead.status);
+params.append('interest', lead.interest);
+params.append('remarks', lead.remarks);
+params.append('id', lead.id);
+// ... अन्य appends
+
+fetch('https://script.google.com/macros/s/AKfycbwRUk_oWvwMLhU3JY_hOp7PncdXtQ6ERnYlWpuPLNPgQcpHNbLaSo_DC8aKFU5Nu2F1/exec', {
+  method: 'POST',
+  mode: 'no-cors',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  body: params
+);
+
+
  renderLeads();
 }
 
