@@ -33,7 +33,7 @@ loginForm.addEventListener('submit', (e) => {
     const user = document.getElementById('username').value.trim();
     const pass = document.getElementById('password').value.trim();
 
-    if (user === 'admin' && pass === '1234') {
+    if (user === 'admin5' && pass === '12345') {
         loginSection.classList.add('hidden');
         dashboardSection.classList.remove('hidden');
         renderLeads();
